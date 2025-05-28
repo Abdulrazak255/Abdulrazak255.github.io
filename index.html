@@ -1,88 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abdulrazak Alyoussef - Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdulrazak Alyoussef | Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body { font-family: 'Segoe UI', sans-serif; }
-    .lang-toggle { cursor: pointer; text-decoration: underline; color: blue; }
-    .profile-img { max-width: 150px; border-radius: 50%; }
-    .flag { width: 25px; cursor: pointer; margin-left: 10px; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    .language-switch { position: absolute; top: 1rem; right: 1rem; }
+    .rounded-profile { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; }
   </style>
 </head>
 <body>
   <div class="container py-5">
-    <div class="d-flex justify-content-end">
-      <img src="https://flagcdn.com/gb.svg" class="flag" onclick="switchLang('en')" />
-      <img src="https://flagcdn.com/sa.svg" class="flag" onclick="switchLang('ar')" />
+    <div class="language-switch">
+      <select id="langSelect" class="form-select">
+        <option value="en">English</option>
+        <option value="ar">العربية</option>
+        <option value="nl">Nederlands</option>
+      </select>
     </div>
 
-    <div class="text-center mb-4">
-      <img src="https://via.placeholder.com/150" alt="Abdulrazak's Photo" class="profile-img mb-3" />
+    <div class="text-center">
+      <img src="profile.jpg" alt="Profile" class="rounded-profile mb-3">
       <h1 id="name">Abdulrazak Alyoussef</h1>
-      <p id="location">2500 Lier, Belgium</p>
-      <p><a href="mailto:Shadowy.3bd@gmail.com">Shadowy.3bd@gmail.com</a></p>
+      <p id="location">2500 Lier, Belgium | <a href="mailto:Shadowy.3bd@gmail.com">Shadowy.3bd@gmail.com</a></p>
       <p>
-        <a href="https://www.linkedin.com/in/abdulrazak-alyoussef/" target="_blank">LinkedIn</a> | 
-        <a href="https://github.com/Abdulrazak255" target="_blank">GitHub</a>
+        <a href="https://github.com/Abdulrazak255" target="_blank">GitHub</a> |
+        <a href="https://www.linkedin.com/in/abdulrazak-alyoussef/" target="_blank">LinkedIn</a>
       </p>
     </div>
 
-    <section>
-      <h2 id="about-title">About Me</h2>
-      <p id="about-text">
+    <hr>
+
+    <section id="about">
+      <h2 data-en="About Me" data-ar="نبذة عني" data-nl="Over Mij">About Me</h2>
+      <p id="bio">
         I am a passionate software developer who enjoys solving complex problems and building efficient software solutions.
         I studied at the University of Damascus with a focus on C# and algorithms. Later, I gained practical experience in Java,
         SQL, and the Spring framework at INTEC Brussels. I am also self-learning Angular and have completed several hands-on projects.
       </p>
     </section>
 
-    <section class="mt-4">
-      <h2 id="skills-title">Skills</h2>
+    <section id="skills" class="mt-5">
+      <h2 data-en="Skills" data-ar="المهارات" data-nl="Vaardigheden">Skills</h2>
       <ul>
         <li>Java</li>
-        <li>Spring / Spring Security / Maven</li>
+        <li>Spring</li>
+        <li>Spring Security</li>
         <li>SQL</li>
+        <li>Maven</li>
         <li>Linux basics</li>
         <li>C#</li>
-        <li>HTML / CSS</li>
+        <li>HTML & CSS</li>
         <li>Angular</li>
       </ul>
     </section>
 
-    <section class="mt-4">
-      <h2 id="projects-title">Projects</h2>
-      <p><a href="projects.html">Click here to view my projects</a></p>
+    <section id="projects" class="mt-5">
+      <h2 data-en="Projects" data-ar="المشاريع" data-nl="Projecten">Projects</h2>
+      <p><a href="projects.html">Click here to view detailed project list</a></p>
     </section>
   </div>
 
   <script>
-    const translations = {
-      ar: {
-        'name': 'عبد الرزاق اليوسف',
-        'location': '2500 لير، بلجيكا',
-        'about-title': 'من أنا',
-        'about-text': 'أنا مطور برمجيات شغوف أحب حل المشكلات المعقدة وبناء حلول برمجية فعّالة. درست في جامعة دمشق وركزت على لغة C# والخوارزميات، ثم اكتسبت خبرة عملية في Java وSQL وSpring في معهد INTEC بروكسل. أتعلم Angular بشكل ذاتي وأنجزت عدة مشاريع تطبيقية.',
-        'skills-title': 'المهارات',
-        'projects-title': 'المشاريع'
-      },
-      en: {
-        'name': 'Abdulrazak Alyoussef',
-        'location': '2500 Lier, Belgium',
-        'about-title': 'About Me',
-        'about-text': 'I am a passionate software developer who enjoys solving complex problems and building efficient software solutions. I studied at the University of Damascus with a focus on C# and algorithms. Later, I gained practical experience in Java, SQL, and the Spring framework at INTEC Brussels. I am also self-learning Angular and have completed several hands-on projects.',
-        'skills-title': 'Skills',
-        'projects-title': 'Projects'
-      }
-    };
+    const select = document.getElementById("langSelect");
+    select.addEventListener("change", changeLanguage);
 
-    function switchLang(lang) {
-      const t = translations[lang];
-      Object.keys(t).forEach(id => {
-        document.getElementById(id).innerText = t[id];
+    function changeLanguage() {
+      const lang = select.value;
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
       });
+
+      const bios = {
+        en: "I am a passionate software developer who enjoys solving complex problems and building efficient software solutions. I studied at the University of Damascus with a focus on C# and algorithms. Later, I gained practical experience in Java, SQL, and the Spring framework at INTEC Brussels. I am also self-learning Angular and have completed several hands-on projects.",
+        ar: "أنا مطور برمجيات شغوف أستمتع بحل المشكلات المعقدة وبناء حلول برمجية فعالة. درست في جامعة دمشق مع تركيز على C# والخوارزميات. ثم اكتسبت خبرة عملية في Java وSQL وإطار عمل Spring في INTEC Brussels. كما أتعلم Angular ذاتياً وأنجزت العديد من المشاريع العملية.",
+        nl: "Ik ben een gepassioneerde softwareontwikkelaar die graag complexe problemen oplost en efficiënte softwareoplossingen bouwt. Ik heb gestudeerd aan de Universiteit van Damascus met een focus op C# en algoritmen. Later heb ik praktische ervaring opgedaan met Java, SQL en het Spring-framework bij INTEC Brussel. Ik leer ook zelfstandig Angular en heb verschillende praktische projecten voltooid."
+      };
+      document.getElementById("bio").textContent = bios[lang];
     }
   </script>
 </body>
