@@ -3,119 +3,95 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects | Abdulrazak Alyoussef</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <title>My Portfolio - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #C7F9CC, #80ED99);
-  color: #22577A;
-  margin: 0;
-  padding: 0;
-}
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #C7F9CC, #80ED99);
+      color: #22577A;
+      margin: 0;
+      padding: 0;
+    }
 
-.container {
-  background-color: #FFFFFFDD; /* White with some transparency */
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(34, 87, 122, 0.2);
-  padding: 2rem;
-  max-width: 900px;
-  margin: 3rem auto;
-}
+    .container {
+      background-color: #ffffffdd;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(34, 87, 122, 0.2);
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: 4rem auto;
+      text-align: center;
+    }
 
-h1, h2 {
-  color: #38A3A5;
-  font-weight: 700;
-}
+    h1 {
+      color: #38A3A5;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
 
-button, .btn {
-  background-color: #57CC99;
-  border: none;
-  color: white;
-  padding: 0.5rem 1.2rem;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
 
-button:hover, .btn:hover {
-  background-color: #38A3A5;
-}
+    .btn {
+      background-color: #57CC99;
+      border: none;
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
 
-.lang-switcher span {
-  cursor: pointer;
-  margin: 0 0.5rem;
-  font-weight: 700;
-  color: #22577A;
-  transition: color 0.3s ease;
-}
+    .btn:hover {
+      background-color: #38A3A5;
+    }
 
-.lang-switcher span:hover {
-  color: #57CC99;
-  text-decoration: underline;
-}
+    .lang-switcher {
+      margin-top: 3rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #22577A;
+    }
+
+    .lang-switcher span {
+      cursor: pointer;
+      margin: 0 0.8rem;
+      transition: color 0.3s ease;
+    }
+
+    .lang-switcher span:hover {
+      color: #57CC99;
+      text-decoration: underline;
+    }
+  </style>
+</head>
 <body>
-  <div class="language-switch">
-    <span class="lang-btn active" data-lang="en">EN</span> |
-    <span class="lang-btn" data-lang="ar">عربي</span> |
-    <span class="lang-btn" data-lang="nl">NL</span>
-  </div>
-
   <div class="container">
-    <h1 data-en="Projects" data-ar="المشاريع" data-nl="Projecten">Projects</h1>
-    <hr />
+    <h1>Welcome to My Portfolio</h1>
+    <p>Hello! I'm Abdulrazak Alyoussef, a passionate software developer specializing in Java, Spring, Angular, and more. Explore my projects and get to know my skills.</p>
+    <a href="projects.html" class="btn">View Projects</a>
 
-    <section id="project-list" class="text-start">
-      <h2 data-en="Featured Projects" data-ar="المشاريع المميزة" data-nl="Uitgelichte Projecten">Featured Projects</h2>
-      <ul>
-        <li>
-          <strong data-en="Java Spring Boot CRUD App" data-ar="تطبيق CRUD بـ Java Spring Boot" data-nl="Java Spring Boot CRUD-app">
-            Java Spring Boot CRUD App
-          </strong> - 
-          <span data-en="A simple CRUD web application built with Spring Boot, Thymeleaf, and Bootstrap." data-ar="تطبيق ويب بسيط لإدارة البيانات باستخدام Spring Boot وThymeleaf وBootstrap." data-nl="Een eenvoudige CRUD-webapplicatie gebouwd met Spring Boot, Thymeleaf en Bootstrap.">
-            A simple CRUD web application built with Spring Boot, Thymeleaf, and Bootstrap.
-          </span>
-        </li>
-        <li>
-          <strong data-en="Angular Role-based Dashboard" data-ar="لوحة تحكم تعتمد على الأدوار باستخدام Angular" data-nl="Role-based dashboard met Angular">
-            Angular Role-based Dashboard
-          </strong> - 
-          <span data-en="An Angular standalone app featuring role-based dashboards for managers, teachers, students, and parents." data-ar="تطبيق Angular مستقل يتضمن لوحات تحكم مبنية على الأدوار للمديرين والمعلمين والطلاب وأولياء الأمور." data-nl="Een Angular standalone-app met rolgebaseerde dashboards voor managers, leraren, studenten en ouders.">
-            An Angular standalone app featuring role-based dashboards for managers, teachers, students, and parents.
-          </span>
-        </li>
-        <li>
-          <strong data-en="Java Enterprise Project" data-ar="مشروع مؤسسة Java" data-nl="Java Enterprise Project">
-            Java Enterprise Project
-          </strong> - 
-          <span data-en="An enterprise-level Java project using Spring, JPA, and Maven, demonstrating advanced backend skills." data-ar="مشروع على مستوى المؤسسات باستخدام Java وSpring وJPA وMaven، يُظهر مهارات متقدمة في البرمجة الخلفية." data-nl="Een enterprise Java-project met Spring, JPA en Maven dat geavanceerde backend-vaardigheden laat zien.">
-            An enterprise-level Java project using Spring, JPA, and Maven, demonstrating advanced backend skills.
-          </span>
-        </li>
-      </ul>
-
-      <p class="mt-4">
-        <a href="index.html" data-en="Back to Home" data-ar="العودة إلى الصفحة الرئيسية" data-nl="Terug naar Home">Back to Home</a>
-      </p>
-    </section>
+    <div class="lang-switcher">
+      <span onclick="setLanguage('en')">EN</span> |
+      <span onclick="setLanguage('ar')">عربي</span> |
+      <span onclick="setLanguage('nl')">NL</span>
+    </div>
   </div>
 
   <script>
-    // Language buttons logic (same as index.html)
-    const langBtns = document.querySelectorAll('.lang-btn');
-    langBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        langBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const lang = btn.getAttribute('data-lang');
-
-        document.querySelectorAll('[data-en]').forEach(el => {
-          el.textContent = el.getAttribute('data-' + lang);
-        });
-      });
-    });
+    function setLanguage(lang) {
+      // Simple language switch simulation
+      alert('Switching language to: ' + lang.toUpperCase());
+      // Here, implement your language change logic or reload content dynamically
+    }
   </script>
 </body>
 </html>
