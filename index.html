@@ -84,12 +84,18 @@
     <p>Hello! I'm Abdulrazak Alyoussef, a passionate software developer specializing in Java, Spring, Angular, and more. Explore my projects and get to know my skills.</p>
     <a href="projects.html" class="btn" role="button">View Projects</a>
 
-    <nav class="lang-switcher" aria-label="Language Switcher">
-      <span tabindex="0" role="button" aria-label="Switch language to English" onclick="setLanguage('en')" onkeypress="if(event.key==='Enter') setLanguage('en')">EN</span> |
-      <span tabindex="0" role="button" aria-label="Switch language to Arabic" onclick="setLanguage('ar')" onkeypress="if(event.key==='Enter') setLanguage('ar')">عربي</span> |
-      <span tabindex="0" role="button" aria-label="Switch language to Dutch" onclick="setLanguage('nl')" onkeypress="if(event.key==='Enter') setLanguage('nl')">NL</span>
-    </nav>
-  </div>
+  <nav class="lang-switcher" aria-label="Language Switcher">
+  <span tabindex="0" role="button" aria-label="Switch language to English"
+        onclick="window.location.href='index_en.html'"
+        onkeypress="if(event.key==='Enter') window.location.href='index_en.html'">EN</span> |
+  <span tabindex="0" role="button" aria-label="Switch language to Arabic"
+        onclick="window.location.href='index_ar.html'"
+        onkeypress="if(event.key==='Enter') window.location.href='index_ar.html'">عربي</span> |
+  <span tabindex="0" role="button" aria-label="Switch language to Dutch"
+        onclick="window.location.href='index_nl.html'"
+        onkeypress="if(event.key==='Enter') window.location.href='index_nl.html'">NL</span>
+</nav>
+
 
   <script>
     function setLanguage(lang) {
