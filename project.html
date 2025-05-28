@@ -15,7 +15,7 @@
     }
 
     .container {
-      background-color: #ffffffdd;
+      background-color: rgba(255, 255, 255, 0.9);
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(34, 87, 122, 0.2);
       padding: 3rem 2rem;
@@ -41,14 +41,17 @@
       border-radius: 10px;
       padding: 1.5rem 2rem;
       box-shadow: 0 4px 10px rgba(34, 87, 122, 0.15);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
       cursor: pointer;
+      outline-offset: 4px;
     }
 
-    .project-card:hover {
+    .project-card:hover,
+    .project-card:focus {
       transform: translateY(-6px);
       background-color: #57CC99;
       color: white;
+      outline: none;
     }
 
     .project-title {
@@ -69,6 +72,7 @@
       font-size: 1.1rem;
       color: #22577A;
       text-align: center;
+      user-select: none;
     }
 
     .lang-switcher span {
@@ -77,44 +81,46 @@
       transition: color 0.3s ease;
     }
 
-    .lang-switcher span:hover {
+    .lang-switcher span:hover,
+    .lang-switcher span:focus {
       color: #57CC99;
       text-decoration: underline;
+      outline: none;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container" role="main">
     <h1>My Projects</h1>
 
-    <div class="project-list">
-      <div class="project-card" tabindex="0">
+    <section class="project-list" aria-label="List of projects">
+      <article class="project-card" tabindex="0">
         <h2 class="project-title">Java Spring Boot App</h2>
         <p class="project-description">A web app with Spring Boot, REST APIs, and MySQL database for managing tasks.</p>
-      </div>
+      </article>
 
-      <div class="project-card" tabindex="0">
+      <article class="project-card" tabindex="0">
         <h2 class="project-title">Angular Role-Based Dashboard</h2>
         <p class="project-description">A dashboard with role-based access control for manager, teacher, student, and parent users.</p>
-      </div>
+      </article>
 
-      <div class="project-card" tabindex="0">
+      <article class="project-card" tabindex="0">
         <h2 class="project-title">Personal Portfolio Website</h2>
         <p class="project-description">Responsive portfolio with multilingual support and smooth UI design.</p>
-      </div>
-    </div>
+      </article>
+    </section>
 
-    <div class="lang-switcher">
-      <span onclick="setLanguage('en')">EN</span> |
-      <span onclick="setLanguage('ar')">عربي</span> |
-      <span onclick="setLanguage('nl')">NL</span>
-    </div>
+    <nav class="lang-switcher" aria-label="Language Switcher">
+      <span tabindex="0" role="button" aria-label="Switch language to English" onclick="setLanguage('en')" onkeypress="if(event.key==='Enter') setLanguage('en')">EN</span> |
+      <span tabindex="0" role="button" aria-label="Switch language to Arabic" onclick="setLanguage('ar')" onkeypress="if(event.key==='Enter') setLanguage('ar')">عربي</span> |
+      <span tabindex="0" role="button" aria-label="Switch language to Dutch" onclick="setLanguage('nl')" onkeypress="if(event.key==='Enter') setLanguage('nl')">NL</span>
+    </nav>
   </div>
 
   <script>
     function setLanguage(lang) {
       alert('Switching language to: ' + lang.toUpperCase());
-      // Add real language switch code here
+      // TODO: Add real language switching logic here
     }
   </script>
 </body>
