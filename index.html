@@ -15,7 +15,7 @@
     }
 
     .container {
-      background-color: #ffffffdd;
+      background-color: rgba(255, 255, 255, 0.9);
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(34, 87, 122, 0.2);
       padding: 3rem 2rem;
@@ -50,8 +50,10 @@
       transition: background-color 0.3s ease;
     }
 
-    .btn:hover {
+    .btn:hover,
+    .btn:focus {
       background-color: #38A3A5;
+      outline: none;
     }
 
     .lang-switcher {
@@ -59,6 +61,7 @@
       font-weight: 700;
       font-size: 1.1rem;
       color: #22577A;
+      user-select: none;
     }
 
     .lang-switcher span {
@@ -67,30 +70,31 @@
       transition: color 0.3s ease;
     }
 
-    .lang-switcher span:hover {
+    .lang-switcher span:hover,
+    .lang-switcher span:focus {
       color: #57CC99;
       text-decoration: underline;
+      outline: none;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container" role="main">
     <h1>Welcome to My Portfolio</h1>
     <p>Hello! I'm Abdulrazak Alyoussef, a passionate software developer specializing in Java, Spring, Angular, and more. Explore my projects and get to know my skills.</p>
-    <a href="projects.html" class="btn">View Projects</a>
+    <a href="projects.html" class="btn" role="button">View Projects</a>
 
-    <div class="lang-switcher">
-      <span onclick="setLanguage('en')">EN</span> |
-      <span onclick="setLanguage('ar')">عربي</span> |
-      <span onclick="setLanguage('nl')">NL</span>
-    </div>
+    <nav class="lang-switcher" aria-label="Language Switcher">
+      <span tabindex="0" role="button" aria-label="Switch language to English" onclick="setLanguage('en')" onkeypress="if(event.key==='Enter') setLanguage('en')">EN</span> |
+      <span tabindex="0" role="button" aria-label="Switch language to Arabic" onclick="setLanguage('ar')" onkeypress="if(event.key==='Enter') setLanguage('ar')">عربي</span> |
+      <span tabindex="0" role="button" aria-label="Switch language to Dutch" onclick="setLanguage('nl')" onkeypress="if(event.key==='Enter') setLanguage('nl')">NL</span>
+    </nav>
   </div>
 
   <script>
     function setLanguage(lang) {
-      // Simple language switch simulation
       alert('Switching language to: ' + lang.toUpperCase());
-      // Here, implement your language change logic or reload content dynamically
+      // TODO: Add real language switching logic here
     }
   </script>
 </body>
