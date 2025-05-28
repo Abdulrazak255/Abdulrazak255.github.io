@@ -1,37 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Abdulrazak Alyoussef | Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    .language-switch { position: absolute; top: 1rem; right: 1rem; }
-    .rounded-profile { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; }
+    /* Gentle blue-purple gradient background */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+      min-height: 100vh;
+      margin: 0;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem 1rem;
+    }
+
+    /* Container card with subtle shadow */
+    .container {
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2.5rem 3rem;
+      border-radius: 18px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      position: relative;
+      width: 100%;
+    }
+
+    /* Language switch position and style */
+    .language-switch {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 90px;
+      font-weight: 600;
+    }
+
+    /* Profile image styling */
+    .rounded-profile {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      border: 3px solid #fed6e3;
+    }
+
+    /* Headings */
+    h1 {
+      color: #222;
+      font-weight: 700;
+      margin-top: 1rem;
+    }
+
+    h2 {
+      color: #444;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #fed6e3;
+      padding-bottom: 0.3rem;
+      font-weight: 600;
+    }
+
+    /* Links styling */
+    a {
+      color: #a8418f;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #6c1d5b;
+      text-decoration: underline;
+    }
+
+    /* List style */
+    ul {
+      list-style-type: disc;
+      padding-left: 1.6rem;
+      color: #555;
+    }
+
+    /* Horizontal line style */
+    hr {
+      border: none;
+      border-top: 1px solid #e8c7d7;
+      margin: 2.5rem 0;
+    }
+
+    /* Paragraph text */
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+    }
   </style>
 </head>
 <body>
-  <div class="container py-5">
+  <div class="container">
     <div class="language-switch">
-      <select id="langSelect" class="form-select">
-        <option value="en">English</option>
-        <option value="ar">العربية</option>
-        <option value="nl">Nederlands</option>
+      <select id="langSelect" class="form-select form-select-sm">
+        <option value="en">EN</option>
+        <option value="ar">عربي</option>
+        <option value="nl">NL</option>
       </select>
     </div>
 
     <div class="text-center">
-      <img src="profile.jpg" alt="Profile" class="rounded-profile mb-3">
+      <img src="profile.jpg" alt="Profile" class="rounded-profile mb-3" />
       <h1 id="name">Abdulrazak Alyoussef</h1>
-      <p id="location">2500 Lier, Belgium | <a href="mailto:Shadowy.3bd@gmail.com">Shadowy.3bd@gmail.com</a></p>
+      <p id="location">
+        2500 Lier, Belgium | <a href="mailto:Shadowy.3bd@gmail.com">Shadowy.3bd@gmail.com</a>
+      </p>
       <p>
-        <a href="https://github.com/Abdulrazak255" target="_blank">GitHub</a> |
-        <a href="https://www.linkedin.com/in/abdulrazak-alyoussef/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/Abdulrazak255" target="_blank" rel="noopener noreferrer">GitHub</a> |
+        <a href="https://www.linkedin.com/in/abdulrazak-alyoussef/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </p>
     </div>
 
-    <hr>
+    <hr />
 
     <section id="about">
       <h2 data-en="About Me" data-ar="نبذة عني" data-nl="Over Mij">About Me</h2>
@@ -74,9 +164,12 @@
       });
 
       const bios = {
-        en: "I am a passionate software developer who enjoys solving complex problems and building efficient software solutions. I studied at the University of Damascus with a focus on C# and algorithms. Later, I gained practical experience in Java, SQL, and the Spring framework at INTEC Brussels. I am also self-learning Angular and have completed several hands-on projects.",
-        ar: "أنا مطور برمجيات شغوف أستمتع بحل المشكلات المعقدة وبناء حلول برمجية فعالة. درست في جامعة دمشق مع تركيز على C# والخوارزميات. ثم اكتسبت خبرة عملية في Java وSQL وإطار عمل Spring في INTEC Brussels. كما أتعلم Angular ذاتياً وأنجزت العديد من المشاريع العملية.",
-        nl: "Ik ben een gepassioneerde softwareontwikkelaar die graag complexe problemen oplost en efficiënte softwareoplossingen bouwt. Ik heb gestudeerd aan de Universiteit van Damascus met een focus op C# en algoritmen. Later heb ik praktische ervaring opgedaan met Java, SQL en het Spring-framework bij INTEC Brussel. Ik leer ook zelfstandig Angular en heb verschillende praktische projecten voltooid."
+        en:
+          "I am a passionate software developer who enjoys solving complex problems and building efficient software solutions. I studied at the University of Damascus with a focus on C# and algorithms. Later, I gained practical experience in Java, SQL, and the Spring framework at INTEC Brussels. I am also self-learning Angular and have completed several hands-on projects.",
+        ar:
+          "أنا مطور برمجيات شغوف أستمتع بحل المشكلات المعقدة وبناء حلول برمجية فعالة. درست في جامعة دمشق مع تركيز على C# والخوارزميات. ثم اكتسبت خبرة عملية في Java وSQL وإطار عمل Spring في INTEC Brussels. كما أتعلم Angular ذاتياً وأنجزت العديد من المشاريع العملية.",
+        nl:
+          "Ik ben een gepassioneerde softwareontwikkelaar die graag complexe problemen oplost en efficiënte softwareoplossingen bouwt. Ik heb gestudeerd aan de Universiteit van Damascus met een focus op C# en algoritmen. Later heb ik praktische ervaring opgedaan met Java, SQL en het Spring-framework bij INTEC Brussel. Ik leer ook zelfstandig Angular en heb verschillende praktische projecten voltooid."
       };
       document.getElementById("bio").textContent = bios[lang];
     }
