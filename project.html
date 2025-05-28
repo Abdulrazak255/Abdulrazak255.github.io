@@ -3,125 +3,179 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Portfolio - Projects</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <title>Projects | المشاريع | Projecten</title>
   <style>
+    /* نفس الألوان والتنسيق */
+    :root {
+      --color1: #C7F9CC;
+      --color2: #80ED99;
+      --color3: #57CC99;
+      --color4: #38A3A5;
+      --color5: #22577A;
+    }
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #C7F9CC, #80ED99);
-      color: #22577A;
       margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(34, 87, 122, 0.2);
-      padding: 3rem 2rem;
-      max-width: 900px;
-      margin: 4rem auto;
-    }
-
-    h1 {
-      color: #38A3A5;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-
-    .project-list {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--color1), var(--color5));
+      color: white;
       display: flex;
       flex-direction: column;
-      gap: 1.6rem;
-    }
-
-    .project-card {
-      background-color: #80ED99;
-      border-radius: 10px;
-      padding: 1.5rem 2rem;
-      box-shadow: 0 4px 10px rgba(34, 87, 122, 0.15);
-      transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-      cursor: pointer;
-      outline-offset: 4px;
-    }
-
-    .project-card:hover,
-    .project-card:focus {
-      transform: translateY(-6px);
-      background-color: #57CC99;
-      color: white;
-      outline: none;
-    }
-
-    .project-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin: 0 0 0.6rem 0;
-    }
-
-    .project-description {
-      font-size: 1rem;
-      line-height: 1.4;
-      margin: 0;
-    }
-
-    .lang-switcher {
-      margin-top: 3rem;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #22577A;
+      align-items: center;
+      padding: 2rem;
+      min-height: 100vh;
+      transition: background 0.5s ease;
+      direction: ltr;
       text-align: center;
-      user-select: none;
     }
-
-    .lang-switcher span {
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 700px;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    li {
+      background-color: var(--color3);
+      margin: 0.8rem 0;
+      padding: 1rem 1.2rem;
+      border-radius: 8px;
+      box-shadow: 0 3px 7px rgba(0,0,0,0.2);
+      cursor: default;
+      font-size: 1.1rem;
+    }
+    a.back-link {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background-color: var(--color4);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
+    }
+    a.back-link:hover {
+      background-color: var(--color2);
+    }
+    .lang-switch {
+      margin-bottom: 1.5rem;
+    }
+    .lang-switch span {
       cursor: pointer;
-      margin: 0 0.8rem;
-      transition: color 0.3s ease;
+      margin: 0 1rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 5px;
+      user-select: none;
+      transition: background-color 0.3s;
     }
-
-    .lang-switcher span:hover,
-    .lang-switcher span:focus {
-      color: #57CC99;
-      text-decoration: underline;
-      outline: none;
+    .lang-switch span:hover {
+      background-color: var(--color3);
+    }
+    .lang-switch .active {
+      background-color: var(--color4);
+      color: #fff;
     }
   </style>
 </head>
 <body>
-  <div class="container" role="main">
-    <h1>My Projects</h1>
-
-    <section class="project-list" aria-label="List of projects">
-      <article class="project-card" tabindex="0">
-        <h2 class="project-title">Java Spring Boot App</h2>
-        <p class="project-description">A web app with Spring Boot, REST APIs, and MySQL database for managing tasks.</p>
-      </article>
-
-      <article class="project-card" tabindex="0">
-        <h2 class="project-title">Angular Role-Based Dashboard</h2>
-        <p class="project-description">A dashboard with role-based access control for manager, teacher, student, and parent users.</p>
-      </article>
-
-      <article class="project-card" tabindex="0">
-        <h2 class="project-title">Personal Portfolio Website</h2>
-        <p class="project-description">Responsive portfolio with multilingual support and smooth UI design.</p>
-      </article>
-    </section>
-
-    <nav class="lang-switcher" aria-label="Language Switcher">
-      <span tabindex="0" role="button" aria-label="Switch language to English" onclick="setLanguage('en')" onkeypress="if(event.key==='Enter') setLanguage('en')">EN</span> |
-      <span tabindex="0" role="button" aria-label="Switch language to Arabic" onclick="setLanguage('ar')" onkeypress="if(event.key==='Enter') setLanguage('ar')">عربي</span> |
-      <span tabindex="0" role="button" aria-label="Switch language to Dutch" onclick="setLanguage('nl')" onkeypress="if(event.key==='Enter') setLanguage('nl')">NL</span>
-    </nav>
+  <div class="lang-switch" aria-label="اختيار اللغة">
+    <span id="en-btn" class="active">EN</span>
+    <span id="ar-btn">عربي</span>
+    <span id="nl-btn">NL</span>
   </div>
 
+  <h1 id="title">My Projects</h1>
+
+  <ul id="projects-list">
+    <li>Portfolio Website</li>
+    <li>Java Spring Boot Application</li>
+    <li>Angular Role-based Dashboard</li>
+    <li>Machine Learning Model</li>
+  </ul>
+
+  <a href="index.html" class="back-link" id="back-link">Back to Home</a>
+
   <script>
+    const texts = {
+      en: {
+        title: "My Projects",
+        backLink: "Back to Home",
+        projects: [
+          "Portfolio Website",
+          "Java Spring Boot Application",
+          "Angular Role-based Dashboard",
+          "Machine Learning Model"
+        ]
+      },
+      ar: {
+        title: "مشاريعي",
+        backLink: "العودة إلى الرئيسية",
+        projects: [
+          "موقع شخصي",
+          "تطبيق جافا Spring Boot",
+          "لوحة تحكم قائمة على الأدوار بـ Angular",
+          "نموذج تعلم آلي"
+        ]
+      },
+      nl: {
+        title: "Mijn projecten",
+        backLink: "Terug naar start",
+        projects: [
+          "Portfolio Website",
+          "Java Spring Boot Applicatie",
+          "Angular Rolgebaseerd Dashboard",
+          "Machine Learning Model"
+        ]
+      }
+    };
+
+    const titleEl = document.getElementById('title');
+    const backLink = document.getElementById('back-link');
+    const projectsList = document.getElementById('projects-list');
+
+    const enBtn = document.getElementById('en-btn');
+    const arBtn = document.getElementById('ar-btn');
+    const nlBtn = document.getElementById('nl-btn');
+
     function setLanguage(lang) {
-      alert('Switching language to: ' + lang.toUpperCase());
-      // TODO: Add real language switching logic here
+      titleEl.textContent = texts[lang].title;
+      backLink.textContent = texts[lang].backLink;
+
+      // تفريغ القائمة وإضافة المشاريع باللغة المختارة
+      projectsList.innerHTML = '';
+      texts[lang].projects.forEach(proj => {
+        const li = document.createElement('li');
+        li.textContent = proj;
+        projectsList.appendChild(li);
+      });
+
+      // تحديث حالة الأزرار
+      [enBtn, arBtn, nlBtn].forEach(btn => btn.classList.remove('active'));
+      if(lang === 'en') enBtn.classList.add('active');
+      else if(lang === 'ar') arBtn.classList.add('active');
+      else if(lang === 'nl') nlBtn.classList.add('active');
+
+      // اتجاه الصفحة للعربية
+      if(lang === 'ar') {
+        document.body.style.direction = 'rtl';
+        document.body.style.textAlign = 'right';
+      } else {
+        document.body.style.direction = 'ltr';
+        document.body.style.textAlign = 'center';
+      }
     }
+
+    enBtn.onclick = () => setLanguage('en');
+    arBtn.onclick = () => setLanguage('ar');
+    nlBtn.onclick = () => setLanguage('nl');
+
+    setLanguage('en');
   </script>
 </body>
 </html>
