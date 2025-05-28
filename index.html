@@ -3,124 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abdulrazak Alyoussef | Portfolio</title>
+  <title>Abdulrazak Alyoussef - Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f7fa;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: #2d3748;
-      color: #fff;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
-
-    section {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-      color: #2d3748;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li {
-      background: #e2e8f0;
-      margin-bottom: 0.5rem;
-      padding: 0.75rem;
-      border-radius: 6px;
-    }
-
-    .links a {
-      margin-right: 1rem;
-      text-decoration: none;
-      color: #3182ce;
-    }
-
-    .links a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #2d3748;
-      color: #fff;
-    }
+    body { font-family: 'Segoe UI', sans-serif; }
+    .lang-toggle { cursor: pointer; text-decoration: underline; color: blue; }
+    .profile-img { max-width: 150px; border-radius: 50%; }
+    .flag { width: 25px; cursor: pointer; margin-left: 10px; }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Abdulrazak Alyousssf</h1>
-    <p>Junior Java & Angular Developer | Passionate about technology</p>
-  </header>
-
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I am a motivated junior developer with experience in Java, Spring Boot, Angular, and web development. I'm passionate about learning new technologies and building real-world applications.
-    </p>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li>Java / Spring Boot</li>
-      <li>Angular</li>
-      <li>HTML / CSS</li>
-      <li>MySQL</li>
-      <li>TypeScript</li>
-      <li>Git / GitHub</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>School Dashboard System</strong> – Role-based system with manager, teacher, student, and parent dashboards (Angular + Java)</li>
-      <li><strong>Library Management App</strong> – Built using Spring Boot and Thymeleaf</li>
-      <li><strong>Personal Portfolio Website</strong> – This site!</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <div class="links">
-      <a href="https://github.com/Abdulrazak255" target="_blank">GitHub</a>
-      <a href="www.linkedin.com/in/abdulrazak-alyoussef" target="_blank">LinkedIn</a>
-      <a href="shadowy.3bd@gmail.com">Email Me</a>
-      <a href="your-cv-link.pdf" target="_blank">Download CV</a>
+  <div class="container py-5">
+    <div class="d-flex justify-content-end">
+      <img src="https://flagcdn.com/gb.svg" class="flag" onclick="switchLang('en')" />
+      <img src="https://flagcdn.com/sa.svg" class="flag" onclick="switchLang('ar')" />
     </div>
-  </section>
 
-  <footer>
-    &copy; 2025 Your Name. All rights reserved.
-  </footer>
+    <div class="text-center mb-4">
+      <img src="https://via.placeholder.com/150" alt="Abdulrazak's Photo" class="profile-img mb-3" />
+      <h1 id="name">Abdulrazak Alyoussef</h1>
+      <p id="location">2500 Lier, Belgium</p>
+      <p><a href="mailto:Shadowy.3bd@gmail.com">Shadowy.3bd@gmail.com</a></p>
+      <p>
+        <a href="https://www.linkedin.com/in/abdulrazak-alyoussef/" target="_blank">LinkedIn</a> | 
+        <a href="https://github.com/Abdulrazak255" target="_blank">GitHub</a>
+      </p>
+    </div>
 
+    <section>
+      <h2 id="about-title">About Me</h2>
+      <p id="about-text">
+        I am a passionate software developer who enjoys solving complex problems and building efficient software solutions.
+        I studied at the University of Damascus with a focus on C# and algorithms. Later, I gained practical experience in Java,
+        SQL, and the Spring framework at INTEC Brussels. I am also self-learning Angular and have completed several hands-on projects.
+      </p>
+    </section>
+
+    <section class="mt-4">
+      <h2 id="skills-title">Skills</h2>
+      <ul>
+        <li>Java</li>
+        <li>Spring / Spring Security / Maven</li>
+        <li>SQL</li>
+        <li>Linux basics</li>
+        <li>C#</li>
+        <li>HTML / CSS</li>
+        <li>Angular</li>
+      </ul>
+    </section>
+
+    <section class="mt-4">
+      <h2 id="projects-title">Projects</h2>
+      <p><a href="projects.html">Click here to view my projects</a></p>
+    </section>
+  </div>
+
+  <script>
+    const translations = {
+      ar: {
+        'name': 'عبد الرزاق اليوسف',
+        'location': '2500 لير، بلجيكا',
+        'about-title': 'من أنا',
+        'about-text': 'أنا مطور برمجيات شغوف أحب حل المشكلات المعقدة وبناء حلول برمجية فعّالة. درست في جامعة دمشق وركزت على لغة C# والخوارزميات، ثم اكتسبت خبرة عملية في Java وSQL وSpring في معهد INTEC بروكسل. أتعلم Angular بشكل ذاتي وأنجزت عدة مشاريع تطبيقية.',
+        'skills-title': 'المهارات',
+        'projects-title': 'المشاريع'
+      },
+      en: {
+        'name': 'Abdulrazak Alyoussef',
+        'location': '2500 Lier, Belgium',
+        'about-title': 'About Me',
+        'about-text': 'I am a passionate software developer who enjoys solving complex problems and building efficient software solutions. I studied at the University of Damascus with a focus on C# and algorithms. Later, I gained practical experience in Java, SQL, and the Spring framework at INTEC Brussels. I am also self-learning Angular and have completed several hands-on projects.',
+        'skills-title': 'Skills',
+        'projects-title': 'Projects'
+      }
+    };
+
+    function switchLang(lang) {
+      const t = translations[lang];
+      Object.keys(t).forEach(id => {
+        document.getElementById(id).innerText = t[id];
+      });
+    }
+  </script>
 </body>
 </html>
