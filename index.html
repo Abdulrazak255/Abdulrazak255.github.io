@@ -3,120 +3,144 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Portfolio - Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <title>الصفحة الرئيسية | Home</title>
   <style>
+    /* الألوان حسب طلبك */
+    :root {
+      --color1: #C7F9CC;
+      --color2: #80ED99;
+      --color3: #57CC99;
+      --color4: #38A3A5;
+      --color5: #22577A;
+    }
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #C7F9CC, #80ED99);
-      color: #22577A;
       margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(34, 87, 122, 0.2);
-      padding: 3rem 2rem;
-      max-width: 900px;
-      margin: 4rem auto;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--color1), var(--color5));
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
       text-align: center;
+      padding: 2rem;
+      transition: background 0.5s ease;
     }
-
     h1 {
-      color: #38A3A5;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
+      font-size: 3rem;
+      margin-bottom: 1rem;
     }
-
     p {
-      font-size: 1.2rem;
-      line-height: 1.6;
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+    .lang-switch {
       margin-bottom: 2rem;
     }
-
-    .btn {
-      background-color: #57CC99;
-      border: none;
-      color: white;
-      padding: 0.8rem 1.8rem;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 1.1rem;
+    .lang-switch span {
       cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn:hover,
-    .btn:focus {
-      background-color: #38A3A5;
-      outline: none;
-    }
-
-    .lang-switcher {
-      margin-top: 3rem;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #22577A;
+      margin: 0 1rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 5px;
       user-select: none;
+      transition: background-color 0.3s;
     }
-
-    .lang-switcher span {
-      cursor: pointer;
-      margin: 0 0.8rem;
-      transition: color 0.3s ease;
+    .lang-switch span:hover {
+      background-color: var(--color3);
     }
-
-    .lang-switcher span:hover,
-    .lang-switcher span:focus {
-      color: #57CC99;
-      text-decoration: underline;
-      outline: none;
+    .lang-switch .active {
+      background-color: var(--color4);
+      color: #fff;
+    }
+    a {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background-color: var(--color3);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.3s;
+    }
+    a:hover {
+      background-color: var(--color2);
     }
   </style>
 </head>
 <body>
-  <div class="container" role="main">
-    <h1 id="title">Welcome to My Portfolio</h1>
-    <p id="description">
-      Hello! I'm Abdulrazak Alyoussef, a passionate software developer specializing in Java, Spring, Angular, and more. Explore my projects and get to know my skills.
-    </p>
-    <a href="projects.html" class="btn" role="button" id="projectsBtn">View Projects</a>
-
-    <nav class="lang-switcher" aria-label="Language Switcher">
-      <span tabindex="0" role="button" aria-label="Switch language to English" onclick="setLanguage('en')" onkeypress="if(event.key==='Enter') setLanguage('en')">EN</span> |
-      <span tabindex="0" role="button" aria-label="Switch language to Arabic" onclick="setLanguage('ar')" onkeypress="if(event.key==='Enter') setLanguage('ar')">عربي</span> |
-      <span tabindex="0" role="button" aria-label="Switch language to Dutch" onclick="setLanguage('nl')" onkeypress="if(event.key==='Enter') setLanguage('nl')">NL</span>
-    </nav>
+  <div class="lang-switch" aria-label="اختيار اللغة">
+    <span id="en-btn" class="active">EN</span>
+    <span id="ar-btn">عربي</span>
+    <span id="nl-btn">NL</span>
   </div>
 
+  <h1 id="title">Welcome to My Portfolio</h1>
+  <p id="description">This is a professional portfolio showcasing my projects and skills.</p>
+
+  <a href="projects.html" id="projects-link">View Projects</a>
+
   <script>
-    const translations = {
+    // محتوى النصوص للغات
+    const texts = {
       en: {
         title: "Welcome to My Portfolio",
-        description: "Hello! I'm Abdulrazak Alyoussef, a passionate software developer specializing in Java, Spring, Angular, and more. Explore my projects and get to know my skills.",
-        projectsBtn: "View Projects"
+        description: "This is a professional portfolio showcasing my projects and skills.",
+        projectsLink: "View Projects",
       },
       ar: {
-        title: "مرحبًا بكم في ملفي الشخصي",
-        description: "مرحبًا! أنا عبدالرزاق اليوسف، مطور برمجيات شغوف متخصص في جافا، سبرينغ، أنجولار، وأكثر. استكشف مشاريعي وتعرف على مهاراتي.",
-        projectsBtn: "عرض المشاريع"
+        title: "مرحباً بكم في ملفي الشخصي",
+        description: "هذا ملف شخصي احترافي يعرض مشاريعي ومهاراتي.",
+        projectsLink: "عرض المشاريع",
       },
       nl: {
         title: "Welkom op mijn portfolio",
-        description: "Hallo! Ik ben Abdulrazak Alyoussef, een gepassioneerde softwareontwikkelaar gespecialiseerd in Java, Spring, Angular en meer. Bekijk mijn projecten en leer mijn vaardigheden kennen.",
-        projectsBtn: "Bekijk projecten"
+        description: "Dit is een professioneel portfolio met mijn projecten en vaardigheden.",
+        projectsLink: "Bekijk projecten",
       }
     };
 
+    // عناصر الصفحة
+    const titleEl = document.getElementById('title');
+    const descEl = document.getElementById('description');
+    const projectsLink = document.getElementById('projects-link');
+
+    // أزرار اللغات
+    const enBtn = document.getElementById('en-btn');
+    const arBtn = document.getElementById('ar-btn');
+    const nlBtn = document.getElementById('nl-btn');
+
     function setLanguage(lang) {
-      document.getElementById('title').textContent = translations[lang].title;
-      document.getElementById('description').textContent = translations[lang].description;
-      document.getElementById('projectsBtn').textContent = translations[lang].projectsBtn;
+      // تحديث النصوص
+      titleEl.textContent = texts[lang].title;
+      descEl.textContent = texts[lang].description;
+      projectsLink.textContent = texts[lang].projectsLink;
+
+      // تحديث الأزرار النشطة
+      [enBtn, arBtn, nlBtn].forEach(btn => btn.classList.remove('active'));
+      if(lang === 'en') enBtn.classList.add('active');
+      else if(lang === 'ar') arBtn.classList.add('active');
+      else if(lang === 'nl') nlBtn.classList.add('active');
+
+      // اتجاه الصفحة للعربية
+      if(lang === 'ar') {
+        document.body.style.direction = 'rtl';
+      } else {
+        document.body.style.direction = 'ltr';
+      }
     }
+
+    // إعداد أحداث النقر على الأزرار
+    enBtn.onclick = () => setLanguage('en');
+    arBtn.onclick = () => setLanguage('ar');
+    nlBtn.onclick = () => setLanguage('nl');
+
+    // اللغة الافتراضية عند التحميل
+    setLanguage('en');
   </script>
 </body>
 </html>
