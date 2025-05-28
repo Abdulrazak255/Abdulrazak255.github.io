@@ -1,141 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abdulrazak Alyoussef | Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Abdulrazak Alyoussef</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Gradient background */
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-    min-height: 100vh;
-    margin: 0;
-    color: #333;
-  }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: #222;
+    }
 
-  .language-switch {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 10;
-    width: 130px;
-  }
+    .container {
+      max-width: 700px;
+      background: rgba(255 255 255 / 0.9);
+      margin: 5rem auto 6rem;
+      padding: 2.5rem 3rem;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
 
-  .container {
-    max-width: 700px;
-    background: rgba(255, 255, 255, 0.9); /* semi-transparent white */
-    padding: 2rem 3rem;
-    margin: 4rem auto 6rem;
-    border-radius: 15px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-  }
+    .language-switch {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      font-weight: 600;
+      font-size: 1rem;
+      user-select: none;
+      z-index: 10;
+    }
 
-  .rounded-profile {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  }
+    .lang-btn {
+      cursor: pointer;
+      color: #2575fc;
+      margin: 0 0.4rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .lang-btn:hover,
+    .lang-btn.active {
+      background-color: #2575fc;
+      color: white;
+    }
 
-  h1, h2 {
-    color: #222;
-  }
+    h1, h2 {
+      margin-bottom: 1rem;
+      color: #222;
+      text-align: center;
+    }
 
-  a {
-    color: #2575fc;
-    text-decoration: none;
-    font-weight: 500;
-  }
+    ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
 
-  a:hover {
-    text-decoration: underline;
-  }
+    a {
+      color: #2575fc;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
 
-  ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-  }
-
-  hr {
-    border: none;
-    border-top: 1px solid #ddd;
-    margin: 2rem 0;
-  }
-</style>
-
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 2rem 0;
+    }
+  </style>
 </head>
 <body>
-  <div class="container py-5">
-    <div class="language-switch">
-      <select id="langSelect" class="form-select">
-        <option value="en">English</option>
-        <option value="ar">العربية</option>
-        <option value="nl">Nederlands</option>
-      </select>
-    </div>
+  <div class="language-switch">
+    <span class="lang-btn active" data-lang="en">EN</span> |
+    <span class="lang-btn" data-lang="ar">عربي</span> |
+    <span class="lang-btn" data-lang="nl">NL</span>
+  </div>
 
-    <div class="text-center">
-      <img src="profile.jpg" alt="Profile" class="rounded-profile mb-3">
-      <h1 id="name">Abdulrazak Alyoussef</h1>
-      <p id="location">2500 Lier, Belgium | <a href="mailto:Shadowy.3bd@gmail.com">Shadowy.3bd@gmail.com</a></p>
-      <p>
-        <a href="https://github.com/Abdulrazak255" target="_blank">GitHub</a> |
-        <a href="https://www.linkedin.com/in/abdulrazak-alyoussef/" target="_blank">LinkedIn</a>
-      </p>
-    </div>
+  <div class="container">
+    <h1 data-en="Projects" data-ar="المشاريع" data-nl="Projecten">Projects</h1>
+    <hr />
 
-    <hr>
-
-    <section id="about">
-      <h2 data-en="About Me" data-ar="نبذة عني" data-nl="Over Mij">About Me</h2>
-      <p id="bio">
-        I am a passionate software developer who enjoys solving complex problems and building efficient software solutions.
-        I studied at the University of Damascus with a focus on C# and algorithms. Later, I gained practical experience in Java,
-        SQL, and the Spring framework at INTEC Brussels. I am also self-learning Angular and have completed several hands-on projects.
-      </p>
-    </section>
-
-    <section id="skills" class="mt-5">
-      <h2 data-en="Skills" data-ar="المهارات" data-nl="Vaardigheden">Skills</h2>
+    <section id="project-list" class="text-start">
+      <h2 data-en="Featured Projects" data-ar="المشاريع المميزة" data-nl="Uitgelichte Projecten">Featured Projects</h2>
       <ul>
-        <li>Java</li>
-        <li>Spring</li>
-        <li>Spring Security</li>
-        <li>SQL</li>
-        <li>Maven</li>
-        <li>Linux basics</li>
-        <li>C#</li>
-        <li>HTML & CSS</li>
-        <li>Angular</li>
+        <li>
+          <strong data-en="Java Spring Boot CRUD App" data-ar="تطبيق CRUD بـ Java Spring Boot" data-nl="Java Spring Boot CRUD-app">
+            Java Spring Boot CRUD App
+          </strong> - 
+          <span data-en="A simple CRUD web application built with Spring Boot, Thymeleaf, and Bootstrap." data-ar="تطبيق ويب بسيط لإدارة البيانات باستخدام Spring Boot وThymeleaf وBootstrap." data-nl="Een eenvoudige CRUD-webapplicatie gebouwd met Spring Boot, Thymeleaf en Bootstrap.">
+            A simple CRUD web application built with Spring Boot, Thymeleaf, and Bootstrap.
+          </span>
+        </li>
+        <li>
+          <strong data-en="Angular Role-based Dashboard" data-ar="لوحة تحكم تعتمد على الأدوار باستخدام Angular" data-nl="Role-based dashboard met Angular">
+            Angular Role-based Dashboard
+          </strong> - 
+          <span data-en="An Angular standalone app featuring role-based dashboards for managers, teachers, students, and parents." data-ar="تطبيق Angular مستقل يتضمن لوحات تحكم مبنية على الأدوار للمديرين والمعلمين والطلاب وأولياء الأمور." data-nl="Een Angular standalone-app met rolgebaseerde dashboards voor managers, leraren, studenten en ouders.">
+            An Angular standalone app featuring role-based dashboards for managers, teachers, students, and parents.
+          </span>
+        </li>
+        <li>
+          <strong data-en="Java Enterprise Project" data-ar="مشروع مؤسسة Java" data-nl="Java Enterprise Project">
+            Java Enterprise Project
+          </strong> - 
+          <span data-en="An enterprise-level Java project using Spring, JPA, and Maven, demonstrating advanced backend skills." data-ar="مشروع على مستوى المؤسسات باستخدام Java وSpring وJPA وMaven، يُظهر مهارات متقدمة في البرمجة الخلفية." data-nl="Een enterprise Java-project met Spring, JPA en Maven dat geavanceerde backend-vaardigheden laat zien.">
+            An enterprise-level Java project using Spring, JPA, and Maven, demonstrating advanced backend skills.
+          </span>
+        </li>
       </ul>
-    </section>
 
-    <section id="projects" class="mt-5">
-      <h2 data-en="Projects" data-ar="المشاريع" data-nl="Projecten">Projects</h2>
-      <p><a href="projects.html">Click here to view detailed project list</a></p>
+      <p class="mt-4">
+        <a href="index.html" data-en="Back to Home" data-ar="العودة إلى الصفحة الرئيسية" data-nl="Terug naar Home">Back to Home</a>
+      </p>
     </section>
   </div>
 
   <script>
-    const select = document.getElementById("langSelect");
-    select.addEventListener("change", changeLanguage);
+    // Language buttons logic (same as index.html)
+    const langBtns = document.querySelectorAll('.lang-btn');
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        langBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
 
-    function changeLanguage() {
-      const lang = select.value;
-      document.querySelectorAll('[data-en]').forEach(el => {
-        el.textContent = el.getAttribute('data-' + lang);
+        const lang = btn.getAttribute('data-lang');
+
+        document.querySelectorAll('[data-en]').forEach(el => {
+          el.textContent = el.getAttribute('data-' + lang);
+        });
       });
-
-      const bios = {
-        en: "I am a passionate software developer who enjoys solving complex problems and building efficient software solutions. I studied at the University of Damascus with a focus on C# and algorithms. Later, I gained practical experience in Java, SQL, and the Spring framework at INTEC Brussels. I am also self-learning Angular and have completed several hands-on projects.",
-        ar: "أنا مطور برمجيات شغوف أستمتع بحل المشكلات المعقدة وبناء حلول برمجية فعالة. درست في جامعة دمشق مع تركيز على C# والخوارزميات. ثم اكتسبت خبرة عملية في Java وSQL وإطار عمل Spring في INTEC Brussels. كما أتعلم Angular ذاتياً وأنجزت العديد من المشاريع العملية.",
-        nl: "Ik ben een gepassioneerde softwareontwikkelaar die graag complexe problemen oplost en efficiënte softwareoplossingen bouwt. Ik heb gestudeerd aan de Universiteit van Damascus met een focus op C# en algoritmen. Later heb ik praktische ervaring opgedaan met Java, SQL en het Spring-framework bij INTEC Brussel. Ik leer ook zelfstandig Angular en heb verschillende praktische projecten voltooid."
-      };
-      document.getElementById("bio").textContent = bios[lang];
-    }
+    });
   </script>
 </body>
 </html>
